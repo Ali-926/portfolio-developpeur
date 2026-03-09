@@ -1,20 +1,43 @@
+import { motion } from "framer-motion";
 import "./hero.css";
 
 function Hero() {
   return (
     <section className="hero">
       <div className="hero-container">
-        <h2 className="hero-title">
+        <motion.h2
+          className="hero-title"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           Bonjour, je suis <span>Ali Ouroui</span>
-        </h2>
+        </motion.h2>
 
-        <h3 className="hero-subtitle">Développeur Web Junior</h3>
+        <motion.h3
+          className="hero-subtitle"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Développeur Web Junior
+        </motion.h3>
 
-        <p className="hero-description">
+        <motion.p
+          className="hero-description"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           Je développe des applications web modernes avec React et Node.js.
-        </p>
+        </motion.p>
 
-        <div className="hero-buttons">
+        <motion.div
+          className="hero-buttons"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
           <a href="#projects" className="btn-primary">
             Voir mes projets
           </a>
@@ -22,7 +45,7 @@ function Hero() {
           <a href="#contact" className="btn-secondary">
             Me contacter
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

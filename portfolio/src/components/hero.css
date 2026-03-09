@@ -11,8 +11,9 @@
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .hero-title span {
@@ -20,14 +21,15 @@
 }
 
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
   color: #94a3b8;
 }
 
 .hero-description {
-  max-width: 500px;
-  margin-bottom: 30px;
+  max-width: 520px;
+  margin-bottom: 35px;
+  line-height: 1.6;
 }
 
 .hero-buttons {
@@ -36,18 +38,28 @@
 }
 
 .btn-primary {
-  padding: 12px 22px;
+  padding: 12px 24px;
   background: #38bdf8;
   color: black;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  padding: 12px 22px;
+  padding: 12px 24px;
   border: 1px solid #38bdf8;
   color: #38bdf8;
   text-decoration: none;
   border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
 }
