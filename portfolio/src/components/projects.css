@@ -19,16 +19,17 @@
 }
 
 .project-card {
-  background: #1e293b;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: var(--transition);
-  transition: var(--transition);
-  cursor: pointer;
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.35s ease;
+  border: 1px solid transparent;
 }
 
 .project-card:hover {
   transform: translateY(-8px) scale(1.02);
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
@@ -73,4 +74,16 @@
   text-decoration: none;
   color: var(--color-primary);
   font-weight: 500;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }

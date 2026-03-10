@@ -5,6 +5,7 @@ function Hero() {
   return (
     <section className="hero">
       <div className="hero-container">
+        <div className="hero-glow"></div>
         <motion.h2
           className="hero-title"
           initial={{ opacity: 0, y: 40 }}

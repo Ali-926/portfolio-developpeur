@@ -9,7 +9,7 @@ const projects = [
     description:
       "Application React de location immobilière avec routing dynamique et composants réutilisables.",
     image: kasaImage,
-    tech: ["React", "CSS"],
+    tech: ["React", "Sass"],
     github: "https://github.com/Ali-926/Kasa",
     demo: "#",
   },

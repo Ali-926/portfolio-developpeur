@@ -2,6 +2,22 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: var(--color-primary);
+  filter: blur(180px);
+  opacity: 0.4;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .hero-container {
@@ -62,4 +78,18 @@
 
 .btn-secondary:hover {
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
