@@ -1,8 +1,16 @@
 import "./about.css";
+import { motion } from "framer-motion";
 
 function About() {
   return (
-    <section id="about" className="about">
+    <motion.section
+      id="about"
+      className="about"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="about-container">
         <h2 className="section-title">À propos</h2>
 
@@ -25,7 +33,7 @@ function About() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

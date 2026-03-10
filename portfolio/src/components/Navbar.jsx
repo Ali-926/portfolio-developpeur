@@ -1,12 +1,20 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <h1 className="logo">Portfolio</h1>
+        <h1 className="logo">Ali Ouroui</h1>
 
-        <ul className="nav-links">
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
+        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
           <li>
             <a href="#about">À propos</a>
           </li>

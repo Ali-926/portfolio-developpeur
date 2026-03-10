@@ -26,19 +26,20 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects" className="projects">
+    <motion.section
+      id="projects"
+      className="projects"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="projects-container">
         <h2 className="section-title">Mes projets</h2>
 
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <motion.div
-              className="project-card"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="project-card" key={index}>
               <img
                 src={project.image}
                 alt={project.title}
@@ -57,15 +58,21 @@ function Projects() {
                 </div>
 
                 <div className="project-links">
-                  <a href={project.github}>GitHub</a>
-                  {project.demo && <a href={project.demo}>Voir le projet</a>}
+                  <a href={project.github} target="_blank" rel="noreferrer">
+                    GitHub
+                  </a>
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noreferrer">
+                      Voir le projet
+                    </a>
+                  )}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

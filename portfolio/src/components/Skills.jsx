@@ -1,5 +1,5 @@
 import "./Skills.css";
-
+import { motion } from "framer-motion";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -13,7 +13,14 @@ import { SiExpress, SiMongodb } from "react-icons/si";
 
 function Skills() {
   return (
-    <section id="skills" className="skills">
+    <motion.section
+      id="skills"
+      className="skills"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="skills-container">
         <h2 className="section-title">Compétences</h2>
 
@@ -59,7 +66,7 @@ function Skills() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

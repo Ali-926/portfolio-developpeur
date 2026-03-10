@@ -1,8 +1,16 @@
+import { motion } from "framer-motion";
 import "./contact.css";
 
 function Contact() {
   return (
-    <section id="contact" className="contact">
+    <motion.section
+      id="contact"
+      className="contact"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       <div className="contact-container">
         <h2 className="section-title">Contact</h2>
 
@@ -28,7 +36,7 @@ function Contact() {
           </button>
         </form>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
