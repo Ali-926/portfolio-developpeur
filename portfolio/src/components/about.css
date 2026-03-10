@@ -1,0 +1,18 @@
+.about {
+  padding: 120px 20px;
+}
+
+.about-container {
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+.about-content {
+  max-width: 700px;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.about-content p {
+  margin-bottom: 20px;
+}
