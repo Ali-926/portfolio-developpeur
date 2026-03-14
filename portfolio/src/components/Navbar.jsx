@@ -6,7 +6,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="Navigation prncipale">
       <div className="navbar-container">
         <h1 className="logo">Ali Ouroui</h1>
 

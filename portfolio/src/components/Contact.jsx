@@ -20,13 +20,26 @@ function Contact() {
           method="POST"
           encType="text/plain"
         >
-          <input type="text" name="name" placeholder="Votre nom" required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Votre nom"
+            required
+            aria-label="Nom"
+          />
 
-          <input type="email" name="email" placeholder="Votre email" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Votre email"
+            required
+            aria-label="Email"
+          />
 
           <textarea
             name="message"
             placeholder="Votre message"
+            aria-label="Message"
             rows="5"
             required
           />

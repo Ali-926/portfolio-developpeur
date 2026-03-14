@@ -8,7 +8,12 @@ function Footer() {
         <p>© {new Date().getFullYear()} Ali Ouroui - Portfolio développeur</p>
 
         <div className="footer-links">
-          <a href="https://github.com/Ali-926" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/Ali-926"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Lien vers profil GitHub"
+          >
             <FaGithub />
           </a>
 
@@ -16,6 +21,7 @@ function Footer() {
             href="https://www.linkedin.com/in/ali-ouroui-75752a3b6/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Lien vers profil LinkedIn"
           >
             <FaLinkedin />
           </a>

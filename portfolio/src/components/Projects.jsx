@@ -1,5 +1,5 @@
-import kasaImage from "../assets/images/kasa.jpg";
-import grimoireImage from "../assets/images/grimoire.jpg";
+import kasaImage from "../assets/images/kasa.webp";
+import grimoireImage from "../assets/images/grimoire.webp";
 import "./projects.css";
 import { motion } from "framer-motion";
 
@@ -44,6 +44,7 @@ function Projects() {
                 src={project.image}
                 alt={project.title}
                 className="project-image"
+                loading="lazy"
               />
 
               <div className="project-content">

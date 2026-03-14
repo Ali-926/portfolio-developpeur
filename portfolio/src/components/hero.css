@@ -12,8 +12,8 @@
   width: 500px;
   height: 500px;
   background: var(--color-primary);
-  filter: blur(180px);
-  opacity: 0.4;
+  filter: blur(120px);
+  opacity: 0.25;
   top: -100px;
   left: 50%;
   transform: translateX(-50%);
@@ -81,11 +81,11 @@
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
+  .hero h1 {
     font-size: 1.5rem;
   }
 
-  .hero h3 {
+  .hero h2 {
     font-size: 1.2rem;
   }
 
