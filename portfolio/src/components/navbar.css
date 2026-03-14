@@ -19,6 +19,13 @@
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #38bdf8;
 }
 
 .nav-links {

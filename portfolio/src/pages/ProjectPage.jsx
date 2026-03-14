@@ -1,20 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import projects from "../data/ProjectContext";
 import "../styles/projectPage.css";
+import NotFound from "./NotFound";
 
 function ProjectPage() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
-    return (
-      <main className="project-page">
-        <h1>Projet introuvable</h1>
-        <Link to="/" className="btn-primary">
-          Retour à l'accueil
-        </Link>
-      </main>
-    );
+    return <NotFound />;
   }
 
   return (
