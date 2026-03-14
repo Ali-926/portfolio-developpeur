@@ -26,10 +26,6 @@ function Home() {
           <Contact />
         </Suspense>
       </main>
-
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 }

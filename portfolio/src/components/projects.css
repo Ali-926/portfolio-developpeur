@@ -76,6 +76,21 @@
   font-weight: 500;
 }
 
+.btn-primary {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #184286;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

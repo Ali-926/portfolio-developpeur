@@ -1,28 +1,16 @@
+import { Link } from "react-router-dom";
+import projects from "../data/ProjectContext";
+
 import kasaImage from "../assets/images/kasa.webp";
 import grimoireImage from "../assets/images/grimoire.webp";
+
 import "./projects.css";
 import { motion } from "framer-motion";
 
-const projects = [
-  {
-    title: "Kasa",
-    description:
-      "Application React de location immobilière avec routing dynamique et composants réutilisables.",
-    image: kasaImage,
-    tech: ["React", "Sass"],
-    github: "https://github.com/Ali-926/Kasa",
-    demo: "#",
-  },
-  {
-    title: "Mon Vieux Grimoire",
-    description:
-      "Application Node.js permettant de gérer des livres avec authentification sécurisée et upload d'images.",
-    image: grimoireImage,
-    tech: ["Node.js", "Express", "MongoDB"],
-    github: "https://github.com/Ali-926/MonVieuxGrimoire",
-    demo: "#",
-  },
-];
+const images = {
+  kasa: kasaImage,
+  grimoire: grimoireImage,
+};
 
 function Projects() {
   return (
@@ -38,10 +26,10 @@ function Projects() {
         <h2 className="section-title">Mes projets</h2>
 
         <div className="projects-grid">
-          {projects.map((project, index) => (
-            <div className="project-card" key={index}>
+          {projects.map((project) => (
+            <div className="project-card" key={project.id}>
               <img
-                src={project.image}
+                src={images[project.id]}
                 alt={project.title}
                 className="project-image"
                 loading="lazy"
@@ -50,23 +38,18 @@ function Projects() {
               <div className="project-content">
                 <h3>{project.title}</h3>
 
-                <p>{project.description}</p>
+                <p>{project.context}</p>
 
                 <div className="project-tech">
-                  {project.tech.map((tech, i) => (
-                    <span key={i}>{tech}</span>
+                  {project.stack.split(",").map((tech, i) => (
+                    <span key={i}>{tech.trim()}</span>
                   ))}
                 </div>
 
                 <div className="project-links">
-                  <a href={project.github} target="_blank" rel="noreferrer">
-                    GitHub
-                  </a>
-                  {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer">
-                      Voir le projet
-                    </a>
-                  )}
+                  <Link to={`/project/${project.id}`} className="btn-primary">
+                    Voir le projet
+                  </Link>
                 </div>
               </div>
             </div>

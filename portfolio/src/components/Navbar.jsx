@@ -1,32 +1,65 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "./navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isHome = location.pathname === "/";
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <nav className="navbar" aria-label="Navigation prncipale">
+    <nav className="navbar" aria-label="Navigation principale">
       <div className="navbar-container">
-        <h1 className="logo">Ali Ouroui</h1>
+        <Link to="/" className="logo" onClick={closeMenu}>
+          Ali Ouroui
+        </Link>
 
-        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Ouvrir le menu"
+        >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
 
         <ul className={menuOpen ? "nav-links active" : "nav-links"}>
-          <li>
-            <a href="#about">À propos</a>
-          </li>
-          <li>
-            <a href="#skills">Compétences</a>
-          </li>
-          <li>
-            <a href="#projects">Projets</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {isHome ? (
+            <>
+              <li>
+                <a href="#about" onClick={closeMenu}>
+                  À propos
+                </a>
+              </li>
+
+              <li>
+                <a href="#skills" onClick={closeMenu}>
+                  Compétences
+                </a>
+              </li>
+
+              <li>
+                <a href="#projects" onClick={closeMenu}>
+                  Projets
+                </a>
+              </li>
+
+              <li>
+                <a href="#contact" onClick={closeMenu}>
+                  Contact
+                </a>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/" onClick={closeMenu}>
+                Accueil
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
