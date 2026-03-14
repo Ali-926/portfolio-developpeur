@@ -7,12 +7,18 @@ const ProjectContext = [
       "Kasa est une plateforme de location immobilière développée avec React dans le cadre de la formation OpenClassrooms.",
     objectives:
       "Créer une application React dynamique avec gestion des routes et composants réutilisables.",
-    stack: "React, React Router, CSS",
+    stack: "React, React Router, Sass",
     skills:
       "Développement React, gestion des composants, routing, gestion d'état.",
     results:
       "Application fonctionnelle avec navigation dynamique et interface moderne.",
     improvements: "Ajouter un backend pour gérer les annonces dynamiquement.",
+
+    challenges: [
+      "Mettre en place un système de routing dynamique avec React Router.",
+      "Créer des composants réutilisables pour améliorer la maintenabilité du code.",
+      "Gérer correctement l'affichage conditionnel des éléments.",
+    ],
   },
   {
     id: "grimoire",
@@ -28,6 +34,12 @@ const ProjectContext = [
     results:
       "API fonctionnelle permettant l'ajout, modification et notation des livres.",
     improvements: "Créer une interface frontend pour exploiter l'API.",
+
+    challenges: [
+      "Mettre en place une authentification sécurisée avec JWT.",
+      "Gérer l'upload d'images avec Multer.",
+      "Optimiser les requêtes MongoDB pour améliorer les performances.",
+    ],
   },
 ];
 

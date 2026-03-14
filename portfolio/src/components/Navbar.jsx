@@ -18,15 +18,26 @@ function Navbar() {
           Ali Ouroui
         </Link>
 
-        <div
-          className="menu-icon"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Ouvrir le menu"
-        >
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </div>
+        {/* Menu hamburger uniquement sur la page d'accueil */}
+        {isHome && (
+          <div
+            className="menu-icon"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Ouvrir le menu"
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </div>
+        )}
 
-        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
+        <ul
+          className={
+            isHome
+              ? menuOpen
+                ? "nav-links active"
+                : "nav-links"
+              : "nav-links project-nav"
+          }
+        >
           {isHome ? (
             <>
               <li>
@@ -34,19 +45,16 @@ function Navbar() {
                   À propos
                 </a>
               </li>
-
               <li>
                 <a href="#skills" onClick={closeMenu}>
                   Compétences
                 </a>
               </li>
-
               <li>
                 <a href="#projects" onClick={closeMenu}>
                   Projets
                 </a>
               </li>
-
               <li>
                 <a href="#contact" onClick={closeMenu}>
                   Contact
@@ -55,9 +63,7 @@ function Navbar() {
             </>
           ) : (
             <li>
-              <Link to="/" onClick={closeMenu}>
-                Accueil
-              </Link>
+              <Link to="/">Accueil</Link>
             </li>
           )}
         </ul>

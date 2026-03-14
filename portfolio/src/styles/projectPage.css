@@ -41,7 +41,46 @@
 }
 
 .project-section p {
-  color: #555;
+  color: #6d6c6c;
+}
+
+.project-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.project-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.project-hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.project-tags span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 15px;
 }
 
 /* boutons */
@@ -71,4 +110,65 @@
 .btn-secondary:hover {
   background: #2563eb;
   color: white;
+}
+
+.project-challenges {
+  margin-top: 15px;
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+.project-challenges li {
+  margin-bottom: 8px;
+  color: #6d6c6c;
+}
+
+@media (max-width: 1024px) {
+  .project-hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .project-hero-content {
+    text-align: center;
+  }
+
+  .project-tags {
+    justify-content: center;
+  }
+
+  .project-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-page {
+    padding: 120px 20px 60px;
+  }
+
+  .project-hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .project-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .project-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+  }
+}
+
+.project-tags span {
+  white-space: nowrap;
 }

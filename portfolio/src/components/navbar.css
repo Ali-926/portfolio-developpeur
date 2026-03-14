@@ -51,6 +51,11 @@
   cursor: pointer;
 }
 
+.project-nav {
+  display: flex;
+  gap: 20px;
+}
+
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -70,4 +75,12 @@
   .nav-links.active {
     right: 0;
   }
+}
+.project-nav {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+  height: auto;
+  width: auto;
 }
