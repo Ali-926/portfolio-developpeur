@@ -1,11 +1,29 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 
 function Contact() {
   const form = useRef();
+
   const [status, setStatus] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const isFormValid =
+    formData.name.trim() !== "" &&
+    formData.email.trim() !== "" &&
+    formData.message.trim() !== "";
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,6 +41,7 @@ function Contact() {
         () => {
           setStatus("success");
           form.current.reset();
+          setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
           console.error(error);
@@ -59,6 +78,8 @@ function Contact() {
             placeholder="Votre nom"
             required
             aria-label="Nom"
+            value={formData.name}
+            onChange={handleChange}
           />
 
           <input
@@ -67,6 +88,8 @@ function Contact() {
             placeholder="Votre email"
             required
             aria-label="Email"
+            value={formData.email}
+            onChange={handleChange}
           />
 
           <textarea
@@ -75,27 +98,43 @@ function Contact() {
             aria-label="Message"
             rows="5"
             required
+            value={formData.message}
+            onChange={handleChange}
           />
 
           <button
             type="submit"
             className="btn-primary"
-            disabled={status === "loading"}
+            disabled={!isFormValid || status === "loading"}
           >
             {status === "loading" ? "Envoi..." : "Envoyer"}
           </button>
 
-          {status === "success" && (
-            <p className="form-message success">
-              ✓ Message envoyé avec succès !
-            </p>
-          )}
+          <AnimatePresence mode="wait">
+            {status === "success" && (
+              <motion.p
+                key="success"
+                className="form-message success"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+              >
+                ✓ Message envoyé avec succès !
+              </motion.p>
+            )}
 
-          {status === "error" && (
-            <p className="form-message error">
-              Une erreur est survenue, veuillez réessayer.
-            </p>
-          )}
+            {status === "error" && (
+              <motion.p
+                key="error"
+                className="form-message error"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+              >
+                Une erreur est survenue, veuillez réessayer.
+              </motion.p>
+            )}
+          </AnimatePresence>
         </form>
       </div>
     </motion.section>

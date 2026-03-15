@@ -44,3 +44,26 @@
 .honeypot {
   display: none;
 }
+
+.form-message {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.form-message.success {
+  color: #2ecc71;
+}
+
+.form-message.error {
+  color: #ff4d4d;
+}
+
+.honeypot {
+  display: none;
+}
+
+/* Bouton désactivé */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
