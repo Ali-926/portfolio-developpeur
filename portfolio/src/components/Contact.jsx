@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./contact.css";
 
 function Contact() {
   const form = useRef();
+  const [status, setStatus] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    setStatus("loading");
 
     emailjs
       .sendForm(
@@ -18,12 +21,12 @@ function Contact() {
       )
       .then(
         () => {
-          alert("Message envoyé avec succès !");
+          setStatus("success");
           form.current.reset();
         },
         (error) => {
           console.error(error);
-          alert("Une erreur est survenue, veuillez réessayer.");
+          setStatus("error");
         },
       );
   };
@@ -41,6 +44,15 @@ function Contact() {
         <h2 className="section-title">Contact</h2>
 
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
+          {/* Honeypot anti-spam */}
+          <input
+            type="text"
+            name="company"
+            className="honeypot"
+            tabIndex="-1"
+            autoComplete="off"
+          />
+
           <input
             type="text"
             name="name"
@@ -65,9 +77,25 @@ function Contact() {
             required
           />
 
-          <button type="submit" className="btn-primary">
-            Envoyer
+          <button
+            type="submit"
+            className="btn-primary"
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Envoi..." : "Envoyer"}
           </button>
+
+          {status === "success" && (
+            <p className="form-message success">
+              ✓ Message envoyé avec succès !
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="form-message error">
+              Une erreur est survenue, veuillez réessayer.
+            </p>
+          )}
         </form>
       </div>
     </motion.section>

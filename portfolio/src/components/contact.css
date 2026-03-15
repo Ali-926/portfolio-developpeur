@@ -26,3 +26,21 @@
 .contact-form button {
   width: fit-content;
 }
+
+.form-message {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.form-message.success {
+  color: #2ecc71;
+}
+
+.form-message.error {
+  color: #ff4d4d;
+}
+
+/* Honeypot anti-spam */
+.honeypot {
+  display: none;
+}
