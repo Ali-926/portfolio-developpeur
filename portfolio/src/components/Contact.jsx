@@ -1,7 +1,33 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import "./contact.css";
 
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_uqlsobk",
+        "template_e6g0f7p",
+        form.current,
+        "fnwO50zkp05H4AW8F",
+      )
+      .then(
+        () => {
+          alert("Message envoyé avec succès !");
+          form.current.reset();
+        },
+        (error) => {
+          console.error(error);
+          alert("Une erreur est survenue, veuillez réessayer.");
+        },
+      );
+  };
+
   return (
     <motion.section
       id="contact"
@@ -14,12 +40,7 @@ function Contact() {
       <div className="contact-container">
         <h2 className="section-title">Contact</h2>
 
-        <form
-          className="contact-form"
-          action="mailto:ali.ouroui@outlook.fr"
-          method="POST"
-          encType="text/plain"
-        >
+        <form ref={form} className="contact-form" onSubmit={sendEmail}>
           <input
             type="text"
             name="name"
