@@ -24,3 +24,16 @@ body {
   background: radial-gradient(circle at top, #1e293b, #020617);
   color: white;
 }
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+
+  transform-origin: 0%;
+  z-index: 9999;
+}

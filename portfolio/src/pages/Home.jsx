@@ -3,7 +3,8 @@ import { lazy, Suspense } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Footer from "../components/Footer";
+import ScrollProgress from "../components/ScrollProgress";
+import ScrollTopButton from "../components/ScrollTopButton";
 
 const Skills = lazy(() => import("../components/Skills"));
 const Projects = lazy(() => import("../components/Projects"));
@@ -13,6 +14,7 @@ function Home() {
   return (
     <>
       <header>
+        <ScrollProgress />
         <Navbar />
       </header>
 
@@ -25,6 +27,7 @@ function Home() {
           <Projects />
           <Contact />
         </Suspense>
+        <ScrollTopButton />
       </main>
     </>
   );

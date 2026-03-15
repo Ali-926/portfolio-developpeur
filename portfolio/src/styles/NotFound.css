@@ -33,3 +33,18 @@
 .notfound .btn-primary:hover {
   background-color: #007acc;
 }
+
+@media (max-width: 768px) {
+  .notfound h1 {
+    font-size: 2.5rem;
+  }
+
+  .notfound p {
+    font-size: 1.2rem;
+  }
+
+  .notfound .btn-primary {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
