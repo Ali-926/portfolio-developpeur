@@ -64,16 +64,24 @@ function Contact() {
 
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
           {/* Honeypot anti-spam */}
+          <label htmlFor="company" className="sr-only" aria-hidden="true">
+            Company (ne pas remplir)
+          </label>
           <input
             type="text"
+            id="company"
             name="company"
             className="honeypot"
             tabIndex="-1"
             autoComplete="off"
           />
 
+          <label htmlFor="name" className="sr-only">
+            Nom
+          </label>
           <input
             type="text"
+            id="name"
             name="name"
             placeholder="Votre nom"
             required
@@ -82,8 +90,12 @@ function Contact() {
             onChange={handleChange}
           />
 
+          <label htmlFor="email" className="sr-only">
+            Email
+          </label>
           <input
             type="email"
+            id="email"
             name="email"
             placeholder="Votre email"
             required
@@ -92,7 +104,11 @@ function Contact() {
             onChange={handleChange}
           />
 
+          <label htmlFor="message" className="sr-only">
+            Message
+          </label>
           <textarea
+            id="message"
             name="message"
             placeholder="Votre message"
             aria-label="Message"
