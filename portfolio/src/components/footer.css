@@ -21,6 +21,12 @@
   font-size: 1.4rem;
 }
 
+.footer-logo {
+  height: 45px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

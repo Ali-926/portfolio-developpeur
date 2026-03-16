@@ -15,7 +15,7 @@ function Navbar() {
     <nav className="navbar" aria-label="Navigation principale">
       <div className="navbar-container">
         <Link to="/" className="logo" onClick={closeMenu}>
-          Ali Ouroui
+          <img src="/logo.png" alt="Logo Ali Ouroui" className="logo-img" />
         </Link>
 
         {/* Menu hamburger uniquement sur la page d'accueil */}

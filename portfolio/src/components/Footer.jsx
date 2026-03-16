@@ -1,10 +1,12 @@
-import "./footer.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import "./footer.css";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
+        <img src="/logo.png" alt="Logo Ali Ouroui" className="footer-logo" />
+
         <p>© {new Date().getFullYear()} Ali Ouroui - Portfolio développeur</p>
 
         <div className="footer-links">

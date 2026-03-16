@@ -30,7 +30,7 @@ function Projects() {
             <div className="project-card" key={project.id}>
               <img
                 src={images[project.id]}
-                alt={project.title}
+                alt={`Image ${project.title}`}
                 className="project-image"
                 loading="lazy"
               />
