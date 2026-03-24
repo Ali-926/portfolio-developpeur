@@ -27,13 +27,9 @@
   width: fit-content;
 }
 
-p {
+.section-description {
   margin-bottom: 30px;
   color: var(--color-text-secondary);
-}
-
-h2.section-title {
-  margin-bottom: 30px;
 }
 
 .form-message {

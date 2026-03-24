@@ -61,7 +61,9 @@ function Contact() {
     >
       <div className="contact-container">
         <h2 className="section-title">Contact</h2>
-        <p>Une question à me poser ? N'hésitez pas à me contacter !</p>
+        <p className="section-description">
+          Une question à me poser ? N'hésitez pas à me contacter !
+        </p>
 
         <form ref={form} className="contact-form" onSubmit={sendEmail}>
           {/* Honeypot anti-spam */}
