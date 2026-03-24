@@ -12,7 +12,9 @@ Le site met en avant plusieurs projets réalisés dans le cadre de ma formation 
 
 🔗 Portfolio en ligne : *https://ali-ouroui-portfolio.netlify.app/*
 
----
+<div style="text-align: center;">
+<img src="portfolio/src/assets/images/home.jpg" alt="Screenshot de la page d'accueil" width="700"/>
+</div>
 
 ## 🛠️ Stack technique
 
@@ -101,7 +103,7 @@ Le site est entièrement responsive et optimisé pour :
 
 - ajout de nouveaux projets
 - amélioration des animations
-- optimisation des performances
+- optimisation du SEO
 - ajout d’un blog technique
 
 ---
@@ -110,5 +112,5 @@ Le site est entièrement responsive et optimisé pour :
 
 **Ali Ouroui**
 
-- GitHub : https://github.com/Ali-926
+- LinkedIn : https://www.linkedin.com/in/ali-ouroui-75752a3b6/
 - Email : [ali.ouroui@outlook.fr](mailto:ali.ouroui@outlook.fr)
