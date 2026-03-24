@@ -41,7 +41,7 @@
 }
 
 .project-section p {
-  color: #6d6c6c;
+  color: #94a3b8;
 }
 
 .project-hero {
@@ -120,7 +120,7 @@
 
 .project-challenges li {
   margin-bottom: 8px;
-  color: #6d6c6c;
+  color: #94a3b8;
 }
 
 @media (max-width: 1024px) {

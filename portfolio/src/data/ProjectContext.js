@@ -33,7 +33,8 @@ const ProjectContext = [
       "Création d'API REST, sécurisation avec JWT, gestion base de données MongoDB.",
     results:
       "API fonctionnelle permettant l'ajout, modification et notation des livres.",
-    improvements: "Créer une interface frontend pour exploiter l'API.",
+    improvements:
+      "Améliorer la validation des données et ajouter des tests unitaires pour renforcer la fiabilité de l'API.",
 
     challenges: [
       "Mettre en place une authentification sécurisée avec JWT.",
